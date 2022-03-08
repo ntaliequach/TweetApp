@@ -42,7 +42,7 @@ class HomeTableTableViewController: UITableViewController {
             self.tableView.reloadData()
             self.myRefreshControl.endRefreshing()
             
-        }, failure: { <#Error#> in
+        }, failure: { (Error) in
             print("Could not retreive tweets")
         })
         
@@ -65,7 +65,7 @@ class HomeTableTableViewController: UITableViewController {
                 self.tweetArray.append(tweet)
             }
             self.tableView.reloadData()
-        }, failure: { <#Error#> in
+        }, failure: { (Error) in
             print("Could not retreive tweets")
         })
         
@@ -85,7 +85,7 @@ class HomeTableTableViewController: UITableViewController {
     
     
     @IBAction func onLogout(_ sender: Any) {
-        TwitterAPICaller.client?.login
+        TwitterAPICaller.client?.logout()
         self.dismiss(animated: true, completion: nil)
         UserDefaults.standard.set(false, forKey: "userLoggedIn")
     }

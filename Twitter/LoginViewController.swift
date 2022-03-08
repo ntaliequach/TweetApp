@@ -28,7 +28,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func onLoginButton(_ sender: Any) {
         
-        let myUrl = "https://api.twitter.com/oath/request_token"
+        let myUrl = "https://api.twitter.com/oauth/request_token"
         TwitterAPICaller.client?.login(url: myUrl, success: {
             
             UserDefaults.standard.set(true, forKey: "userLoggedIn")
